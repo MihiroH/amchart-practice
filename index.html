@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <script src="//www.amcharts.com/lib/4/core.js"></script>
+  <script src="//www.amcharts.com/lib/4/charts.js"></script>
+</head>
+<body>
+  <div class="box">
+    <h1>
+      グラフエリアをスクロール可能にする例1
+    </h1>
+    <p>
+      ※グラフエリアをタップ後何も操作しないと3秒でグリップが非表示になります。
+      <br>
+      ※「ドラッグ」タッチジェスチャーに反応しなくなり、ページを中断することなくスクロールできます。チャート面に触れても。
+      <br>
+      ※チャートをタップすると、「アクティブ」になります。<strong>チャートが「アクティブ化」されると、パン、ズームなどの元の機能が回復します。</strong>
+      <br>
+      ※チャートを操作し続ける限り、チャートは「アクティブ化」モードのままになります。
+      <br>
+      ※非アクティブ状態が3秒（設定可能）になると、チャートは自動的に「アクティブ化」モードを終了し、ページのスクロールが再び可能になります。
+      <br>
+      ※チャートは、チャートの外側に触れた場合にも「アクティブ」モードを終了します。
+    </p>
+    <div class="inner">
+      <div id="chartdiv"></div>
+    </div>
+    <h1>
+      グラフエリアをスクロールを可能にする例2
+    </h1>
+    <p>
+      ※画面上でチャートをタッチすると、特殊な非侵入型グリップがチャート上に表示されます。
+      <br>
+      ※ユーザーはグリップをタッチしてドラッグし、ページをスクロールできます。
+      <br>
+      ※非アクティブ状態が3秒（構成可能）になると、グリップは自動的に非表示になります。
+    </p>
+    <div class="inner">
+      <div id="chartdiv_2"></div>
+    </div>
+  </div>
+<style>
+.box {
+  width: 100%;
+  overflow: hidden;
+}
+.inner {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.inner + h1 {
+  margin-top: 80px;
+}
+h1 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+p {
+  font-size: 10px;
+}
+strong {
+  color: red;
+}
+#chartdiv {
+  width: 600px;
+  height: 300px;
+}
+#chartdiv_2 {
+  width: 600px;
+  height: 300px;
+}
+</style>
+  <script src="./script.js"></script>
+</body>
+</html>
